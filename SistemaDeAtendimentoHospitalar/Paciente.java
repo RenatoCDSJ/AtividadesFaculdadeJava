@@ -1,18 +1,18 @@
 //Essa classe ira receber dados do paciente, sendo eles, nome, cpf e np(nivel de prioridade)
 public class Paciente {
     private String nome;
-    private int cpf;
-    private int np;
-    public int getNp() {
+    private String cpf;
+    private String np;
+    public String getNp() {
         return np;
     }
-    public void setNp(int np) {
+    public void setNp(String np) {
         this.np = np;
     }
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
     public String getNome() {
@@ -21,9 +21,13 @@ public class Paciente {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public Paciente(String nome, int cpf, int np){
+    public Paciente(String nome, String cpf, String np){
         this.nome = nome;
         this.cpf = cpf;
         this.np = np;
+    }
+    @Override
+    public String toString(){
+        return "nome: "+nome+"\ncpf: "+cpf+"\nnp: "+np;
     }
 }

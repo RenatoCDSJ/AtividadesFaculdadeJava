@@ -5,6 +5,12 @@ public class FilaL<T>{
     private No<T> cabeca;
     private No<T> calda;
     private int num;
+    public No<T> getCabeca() {
+        return cabeca;
+    }
+    public void setCabeca(No<T> cabeca) {
+        this.cabeca = cabeca;
+    }
     public int getNum() {
         return num;
     }

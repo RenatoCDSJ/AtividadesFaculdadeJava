@@ -5,7 +5,7 @@
  */
 import java.util.Scanner;
 public class Menu {
-    
+    //obj gh foi criado para que a função menu pudesse manipular os dados da classe GestaoHospital  
     GestaoHospital gh = new GestaoHospital();
     public void menu(){
         Scanner scn = new Scanner(System.in);

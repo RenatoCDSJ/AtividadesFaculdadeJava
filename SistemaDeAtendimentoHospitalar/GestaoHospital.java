@@ -13,11 +13,13 @@
 import java.util.Scanner;
 public class GestaoHospital {
     private int ordem = 0;
+    //filas que vão armazenar os pacientes de acordo com a prioridade
     FilaL<Paciente> fila0 = new FilaL<>();
     FilaL<Paciente> fila1 = new FilaL<>();
     FilaL<Paciente> fila2 = new FilaL<>();
     FilaL<Paciente> fila3 = new FilaL<>();
     
+    //metodo para adicionar paciente a fila
     private void addFila(int num, Paciente paciente){
         if(num == 0){
             fila0.addFila(paciente);
@@ -29,7 +31,7 @@ public class GestaoHospital {
             fila3.addFila(paciente);
         }
     }
-    
+    // metodo para tirar paciente da fila
     private void rmFila(int num){
         if(num == 0){
             fila0.rmFila();
@@ -41,7 +43,7 @@ public class GestaoHospital {
             fila3.rmFila();
         }
     }
-    
+    //metodo para transformar as informações do paciente em nó para ser armazenado na fila
     private void noPaciente(Paciente paciente){
         if(paciente.getNp().equals("0")){
             addFila(0, paciente);
@@ -53,7 +55,7 @@ public class GestaoHospital {
             addFila(3, paciente);
         }
     }
-
+    //metodo para solicitar informações do paciente e transformalo em um tipo aceito pelo nó
     public void novoPaciente(){
         Scanner scn = new Scanner(System.in);
         boolean npAprovado = false;
@@ -74,6 +76,7 @@ public class GestaoHospital {
         System.out.println("Paciente: "+ paciente.getNome() +" adicionado á fila!");
     }
 
+    //metodo para exibir o numero total dos pacientes nas filas e em cada uma delas
     public void exibirNumeroPacientesFila(){
         int pacientes = fila0.getNum()+fila1.getNum()+fila2.getNum()+fila3.getNum();
         int f0 = fila0.getNum();
@@ -83,6 +86,7 @@ public class GestaoHospital {
         System.out.println("Pacientes na fila:"+ pacientes+ "\nf0: "+ f0+ "\nf1: "+ f1+ "\nf2: "+ f2+ "\nf3: "+ f3);
     }
 
+    //metodo de ordem que deve ser executada a chamada de pacientes das filas
     private int ordem(){
         ordem++;
         int num = 0;
@@ -112,6 +116,7 @@ public class GestaoHospital {
         return num;
     }
 
+    //metodo verificador de filas para saber se a fila solicitada está vazia
     public boolean filaVazia(int num){
         if(num == 0){
             if(fila0.getCabeca() == null){
@@ -140,6 +145,8 @@ public class GestaoHospital {
         }
         return false;
     }
+
+    //metodo que mostra informações do paciente que será atendido
     private void printPaciente(int num){
         System.out.println("Paciente atendido:");
         if(num == 0){
@@ -153,6 +160,7 @@ public class GestaoHospital {
         }
     }
 
+    //metodo que atende pacientes nas filas
     public void atenderPaciente(){
         int pacientes = fila0.getNum()+fila1.getNum()+fila2.getNum()+fila3.getNum();
         if(pacientes == 0){

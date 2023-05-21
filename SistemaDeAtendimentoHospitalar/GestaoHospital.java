@@ -67,8 +67,13 @@ public class GestaoHospital {
         noPaciente(paciente);
         scn.close();
     }
-    public int exibirNumeroPacientesFila(){
-        return fila0.getNum()+fila1.getNum()+fila2.getNum()+fila3.getNum();
+    public String exibirNumeroPacientesFila(){
+        int pacientes = fila0.getNum()+fila1.getNum()+fila2.getNum()+fila3.getNum();
+        int f0 = fila0.getNum();
+        int f1 = fila1.getNum();
+        int f2 = fila2.getNum();
+        int f3 = fila3.getNum();
+        return "Pacientes na fila:"+ pacientes+ "\nf0:"+ f0+ "\nf1:"+ f1+ "\nf2:"+ f2+ "\nf3"+ f3;
     }
     private int ordem(){
         ordem++;
@@ -99,7 +104,8 @@ public class GestaoHospital {
         return num;
     }
     public void atenderPaciente(){
-        if(exibirNumeroPacientesFila() == 0){
+        int pacientes = fila0.getNum()+fila1.getNum()+fila2.getNum()+fila3.getNum();
+        if(pacientes == 0){
             System.out.println("nenhum paciente na fila de espera.");
         }
         int num = ordem();

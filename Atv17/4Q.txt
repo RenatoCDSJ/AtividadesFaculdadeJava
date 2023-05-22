@@ -1,0 +1,21 @@
+Q01)
+solução:
+1) Em relação a organização, implementar um sistema de fila para a organização dos clientes, utilizando fichas para manter a ordem de chegada, verificação do numero de produtos diferentes que o cliente vai comprar e ter a função de chamar o proximo da fila.
+2) Em relação a espera nas filas dos caixas, utilizar filas diferentes para diferentes clientes:
+-2 filas para clientes com menos ou 10(número ilustrativo) produtos diferentes.
+-5 filas para clientes com mais de 10(número ilustrativo) produtos diferentes.
+-1 fila preferencial.
+alem disso acrescentar um registro de atendimento para saber o tempo que está levando para atender os clientes.
+
+Q02)
+solução:
+1) Deve ser criado um chatbot responsavel por coletar informações do cliente(dados pessoais como nome, cpf e nivel de prioridade(0-normal,1-preferencial)) e o direcionar para o setor que ele necessita, o cliente deve ser adicionando a uma fila de espera relacionada a seu nivel de prioridade naquele setor e ser atendido na ordem de chegada pelos atendentes.
+2) Deve ser implementado um sistema de registro de atendimento para poder ver o tempo que estão levando para atender cada cliente.
+
+Q03)
+solução:
+	O sistema deve receber a triagem dos chamados, colocalos em uma fila relacionada ao especialista de acordo com o nivel de prioridade de sua triagem e a chamada deve ser na ordem da de chegada da fila e de acordo com as regras de atendimento por nivel de prioridade.
+
+Q4)
+solução:
+	O sistema deve verificar  nos horários de pico o numero de pessoas sendo adicionadas na fila e ir solicitando a vinda de outros ônibus para acomodar essas pessoas na fila. Deve haver também uma fila para os onibus para que haja um controlhe do fluxo de passageiros e ônibus.
